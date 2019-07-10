@@ -1,0 +1,141 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>吃瓜网民监测系统</title><link rel=icon sizes=any mask="" href=img/xigua.png><link rel=stylesheet href=https://unpkg.com/element-ui/lib/theme-chalk/index.css><script src=https://unpkg.com/vue/dist/vue.js></script><script src=https://unpkg.com/element-ui/lib/index.js></script><script src=https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js></script><script>//http://192.168.1.185/ http://chigua.yuqing.pro:99/ http://yapi.demo.qunar.com/mock/70481/
+        const url ="http://chigua.yuqing.pro:99/";
+        //http://yapi.demo.qunar.com/mock/70481/Api/Statistical/GetStatisticalByType?BeginTime=2019-06-04&EndTime=2019-06-11&AgencyID=1
+        //http://yapi.demo.qunar.com/mock/70481/Api/Statistical/GetStatisticalByType?BeginTime=2019-06-05&EndTime=2019-06-10&AgencyID=0
+        const yapi = "http://chigua.yuqing.pro:99/"</script><style>a{
+            color: blue;
+        }
+        .el-select__caret{
+            height: 30px !important;
+        }
+        .aa:hover{
+            text-decoration: underline;
+        }
+        .el-range__close-icon {
+            display: none !important;
+        }
+        body{
+            height: 100%;
+            background:rgba(243,246,247,1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .tanBox input[type=text] {
+            height: 36px !important;
+
+        }
+
+        .set .el-date-editor .el-range__icon {
+            font-size: 14px;
+            margin-left: 5px;
+            color: #C0C4CC;
+            float: left;
+            line-height: 34px !important;
+        }
+
+        .tanBox .el-input__inner,
+        .el-select__caret {
+            height: 36px !important;
+            line-height: 0px !important;
+        }
+
+        .el-button {
+            height: 36px !important;
+            line-height: 0px !important;
+        }
+
+        .tanBox .el-select__caret {
+            height: 36px;
+            line-height: 36px;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        [type=text] {
+            height: 30px;
+        }
+
+        #box .el-input__inner,
+        .el-select__caret {
+            height: 30px !important;
+            line-height: 0px !important;
+        }
+
+        .onLeft .el-date-editor {
+            height: 30px !important;
+            font-size: 14px !important;
+            overflow: hidden;
+        }
+
+        .onLeft .el-range-separator {
+            height: 30px !important;
+            line-height: 30px !important;
+        }
+
+        .onLeft .el-date-editor--date {
+            height: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .onLeft .el-icon-date {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .onLeft .el-radio-button__inner {
+            height: 30px !important;
+            display: flex;
+            align-items: center;
+        }
+
+        .onLeft .el-input__suffix {
+            display: flex;
+            align-items: center;
+        }
+        .onLeft .el-input__prefix {
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        .onLeft .el-range-input {
+            /* height: 30px !important;
+            display: flex;
+            align-items: center;
+            font-size: 14px !important; */
+        }
+
+        .cur {
+            cursor: pointer;
+        }
+        .rba:hover {
+            background: rgba(226, 241, 255, 1);
+            cursor: pointer;
+        }
+
+        .el-range-editor.el-input__inner {
+            line-height: 0 !important;
+        }
+
+        .el-date-editor .el-range__icon {
+            font-size: 14px;
+            margin-right: 5px !important;
+            color: #C0C4CC;
+            float: right !important;
+        }
+
+        .el-date-editor {
+            display: block !important;
+            line-height: 0 !important;
+            padding: 0 !important;
+        }</style><link href=css/chunk-0c18a0f2.97c8c900.css rel=prefetch><link href=css/chunk-125fb800.95117acf.css rel=prefetch><link href=css/chunk-2dab8d28.1f4058bf.css rel=prefetch><link href=css/chunk-351cd5ee.11b8a18f.css rel=prefetch><link href=css/chunk-471a4918.91709a82.css rel=prefetch><link href=css/chunk-c8742aba.308a4cb6.css rel=prefetch><link href=js/chunk-0c18a0f2.316a7aba.js rel=prefetch><link href=js/chunk-125fb800.b5579f4c.js rel=prefetch><link href=js/chunk-2dab8d28.aaad7095.js rel=prefetch><link href=js/chunk-351cd5ee.4f50791b.js rel=prefetch><link href=js/chunk-471a4918.323224ea.js rel=prefetch><link href=js/chunk-76385b50.ec86ecca.js rel=prefetch><link href=js/chunk-c8742aba.244c6dac.js rel=prefetch><link href=js/app.d9796b76.js rel=preload as=script><link href=js/chunk-vendors.09271f45.js rel=preload as=script></head><body><div id=app></div><script src=js/chunk-vendors.09271f45.js></script><script src=js/app.d9796b76.js></script></body></html>
