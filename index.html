@@ -137,17 +137,6 @@
         let lia = document.querySelectorAll("header ul li a");
         let len = lia.length;
         let het = document.querySelector("body").clientHeight;
-        console.log(het)
-        ulu.onclick = function (e) {
-            var e = e || window.event;
-            var target = e.target || e.srcElement;
-            if (target.nodeName == "A") {
-                for (let i = 0; i < len; i++) {
-                    lia[i].classList.remove("bg");
-                }
-                target.classList.add("bg")
-            }
-        }
         con.onscroll = function () {
             let lhet = this.scrollTop;
             for (let i = 0; i < len; i++) {
