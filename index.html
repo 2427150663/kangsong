@@ -1,23 +1,12 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>吃瓜网民监测系统</title><link rel=icon sizes=any mask="" href=img/xigua.png><link rel=stylesheet href=https://unpkg.com/element-ui/lib/theme-chalk/index.css><script src=https://unpkg.com/vue/dist/vue.js></script><script src=https://unpkg.com/element-ui/lib/index.js></script><script src=https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js></script><script>//http://192.168.1.185/ http://chigua.yuqing.pro:99/ http://yapi.demo.qunar.com/mock/70481/
-        const url ="http://chigua.yuqing.pro:99/";
-        //http://yapi.demo.qunar.com/mock/70481/Api/Statistical/GetStatisticalByType?BeginTime=2019-06-04&EndTime=2019-06-11&AgencyID=1
-        //http://yapi.demo.qunar.com/mock/70481/Api/Statistical/GetStatisticalByType?BeginTime=2019-06-05&EndTime=2019-06-10&AgencyID=0
-        const yapi = "http://chigua.yuqing.pro:99/"</script><style>a{
-            color: blue;
-        }
-        .el-select__caret{
-            height: 30px !important;
-        }
-        .aa:hover{
-            text-decoration: underline;
-        }
-        .el-range__close-icon {
-            display: none !important;
-        }
-        body{
-            height: 100%;
-            background:rgba(243,246,247,1);
-        }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -25,117 +14,150 @@
             text-decoration: none;
         }
 
-        .tanBox input[type=text] {
-            height: 36px !important;
-
-        }
-
-        .set .el-date-editor .el-range__icon {
-            font-size: 14px;
-            margin-left: 5px;
-            color: #C0C4CC;
-            float: left;
-            line-height: 34px !important;
-        }
-
-        .tanBox .el-input__inner,
-        .el-select__caret {
-            height: 36px !important;
-            line-height: 0px !important;
-        }
-
-        .el-button {
-            height: 36px !important;
-            line-height: 0px !important;
-        }
-
-        .tanBox .el-select__caret {
-            height: 36px;
-            line-height: 36px;
-        }
-
-        html,
         body {
             width: 100%;
             height: 100%;
-            overflow-x: hidden;
-        }
-
-        [type=text] {
-            height: 30px;
-        }
-
-        #box .el-input__inner,
-        .el-select__caret {
-            height: 30px !important;
-            line-height: 0px !important;
-        }
-
-        .onLeft .el-date-editor {
-            height: 30px !important;
-            font-size: 14px !important;
             overflow: hidden;
         }
 
-        .onLeft .el-range-separator {
-            height: 30px !important;
-            line-height: 30px !important;
+        header {
+            width: 100%;
+            height: 60px;
+            background: rgba(0, 0, 1, 0.5);
+            position: fixed;
+            top: 0px;
+            left: 0px;
         }
 
-        .onLeft .el-date-editor--date {
-            height: 30px;
+        header ul {
+            height: 60px;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
-        .onLeft .el-icon-date {
-            height: 30px;
-            line-height: 30px;
+        header ul li {
+            margin: 0 2rem;
         }
 
-        .onLeft .el-radio-button__inner {
-            height: 30px !important;
+        header ul li a {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        header ul li a.bg {
+            color: firebrick;
+        }
+
+        .conter {
+            width: 100%;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
             align-items: center;
+            scroll-snap-align: center;
+
         }
 
-        .onLeft .el-input__suffix {
-            display: flex;
-            align-items: center;
-        }
-        .onLeft .el-input__prefix {
-            display: flex !important;
-            align-items: center !important;
+        section h1 {
+            font-size: 2rem;
+            line-height: 60px;
         }
 
-        .onLeft .el-range-input {
-            /* height: 30px !important;
-            display: flex;
-            align-items: center;
-            font-size: 14px !important; */
+        section div {
+            font-size: 1rem;
         }
 
-        .cur {
-            cursor: pointer;
-        }
-        .rba:hover {
-            background: rgba(226, 241, 255, 1);
-            cursor: pointer;
+        #ids1 {
+            background: url(http://p19.qhimg.com/t0175a449a6b8839c46.jpg)no-repeat center center;
+
+            background-size: 100% 100%;
         }
 
-        .el-range-editor.el-input__inner {
-            line-height: 0 !important;
+        #ids2 {
+            background: url(http:\/\/p17.qhimg.com\/bdr\/__85\/t0186056bc46547188c.jpg)no-repeat center center;
+
+            background-size: 100% 100%;
         }
 
-        .el-date-editor .el-range__icon {
-            font-size: 14px;
-            margin-right: 5px !important;
-            color: #C0C4CC;
-            float: right !important;
+        #ids3 {
+            background: url(http:\/\/p17.qhimg.com\/bdm\/1024_768_85\/t0186056bc46547188c.jpg)no-repeat center center;
+
+            background-size: 100% 100%;
         }
 
-        .el-date-editor {
-            display: block !important;
-            line-height: 0 !important;
-            padding: 0 !important;
-        }</style><link href=css/chunk-0c18a0f2.97c8c900.css rel=prefetch><link href=css/chunk-125fb800.95117acf.css rel=prefetch><link href=css/chunk-2dab8d28.1f4058bf.css rel=prefetch><link href=css/chunk-351cd5ee.11b8a18f.css rel=prefetch><link href=css/chunk-471a4918.91709a82.css rel=prefetch><link href=css/chunk-c8742aba.308a4cb6.css rel=prefetch><link href=js/chunk-0c18a0f2.316a7aba.js rel=prefetch><link href=js/chunk-125fb800.b5579f4c.js rel=prefetch><link href=js/chunk-2dab8d28.aaad7095.js rel=prefetch><link href=js/chunk-351cd5ee.4f50791b.js rel=prefetch><link href=js/chunk-471a4918.323224ea.js rel=prefetch><link href=js/chunk-76385b50.ec86ecca.js rel=prefetch><link href=js/chunk-c8742aba.244c6dac.js rel=prefetch><link href=js/app.d9796b76.js rel=preload as=script><link href=js/chunk-vendors.09271f45.js rel=preload as=script></head><body><div id=app></div><script src=js/chunk-vendors.09271f45.js></script><script src=js/app.d9796b76.js></script></body></html>
+        #ids4 {
+            background: url(http:\/\/p16.qhimg.com\/bdm\/1440_900_85\/t01264967c85d13877f.jpg)no-repeat center center;
+
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="#ids1" class="bg">首页</a></li>
+            <li><a href="#ids2">商城</a></li>
+            <li><a href="#ids3">购物车</a></li>
+            <li><a href="#ids4">我的</a></li>
+        </ul>
+    </header>
+    <div class="conter">
+        <section id="ids1">
+            <h1>欢迎来到首页</h1>
+            <div>番外篇可铺付扩翁付铺无可付铺扩翁破付付付付付付付付付付付付付付付付付付付付付付付无错所所所所所所所撒所大大所多</div>
+        </section>
+        <section id="ids2">
+            <h1>欢迎来到商场</h1>
+            <div>番外篇可铺付扩翁付铺无可付铺扩翁破付付付付付付付付付付付付付付付付付付付付付付付无错所所所所所所所撒所大大所多</div>
+        </section>
+        <section id="ids3">
+            <h1>欢迎来到购物车</h1>
+            <div>番外篇可铺付扩翁付铺无可付铺扩翁破付付付付付付付付付付付付付付付付付付付付付付付无错所所所所所所所撒所大大所多</div>
+        </section>
+        <section id="ids4">
+            <h1>欢迎来到我的</h1>
+            <div>番外篇可铺付扩翁付铺无可付铺扩翁破付付付付付付付付付付付付付付付付付付付付付付付无错所所所所所所所撒所大大所多</div>
+        </section>
+    </div>
+    <script>
+        let con = document.querySelector(".conter");
+        let ulu = document.querySelector("header ul");
+        let lia = document.querySelectorAll("header ul li a");
+        let len = lia.length;
+        let het = document.querySelector("body").clientHeight;
+        console.log(het)
+        ulu.onclick = function (e) {
+            var e = e || window.event;
+            var target = e.target || e.srcElement;
+            if (target.nodeName == "A") {
+                for (let i = 0; i < len; i++) {
+                    lia[i].classList.remove("bg");
+                }
+                target.classList.add("bg")
+            }
+        }
+        con.onscroll = function () {
+            let lhet = this.scrollTop;
+            for (let i = 0; i < len; i++) {
+                lia[i].classList.remove("bg");
+                if (lhet >= het * i && lhet < het * (i + 1)) {
+                    lia[i].classList.add("bg");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
