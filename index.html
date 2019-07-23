@@ -33,7 +33,7 @@
             height: 60px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* justify-content: center; */
         }
 
         header ul li {
@@ -65,7 +65,8 @@
             justify-content: center;
             color: white;
             align-items: center;
-            scroll-snap-align: center;
+            /* scroll-snap-align: center; */
+            scroll-snap-align: start;
 
         }
 
@@ -75,23 +76,23 @@
         }
 
         section div {
-            font-size: 1rem;
+            font-size: 1.4rem;
         }
 
         #ids1 {
-            background: url(http://p19.qhimg.com/t0175a449a6b8839c46.jpg)no-repeat center center;
+            background: url(http://p16.qhimg.com/t014cbd1c1564c8a406.jpg)no-repeat center center;
 
             background-size: 100% 100%;
         }
 
         #ids2 {
-            background: url(http:\/\/p17.qhimg.com\/bdr\/__85\/t0186056bc46547188c.jpg)no-repeat center center;
+            background: url(http://p18.qhimg.com/t01d8c3bb5ff69c3f7e.jpg)no-repeat center center;
 
             background-size: 100% 100%;
         }
 
         #ids3 {
-            background: url(http:\/\/p17.qhimg.com\/bdm\/1024_768_85\/t0186056bc46547188c.jpg)no-repeat center center;
+            background: url(http://p19.qhimg.com/t01476816b00798372f.jpg)no-repeat center center;
 
             background-size: 100% 100%;
         }
@@ -107,28 +108,130 @@
 <body>
     <header>
         <ul>
-            <li><a href="#ids1" class="bg">首页</a></li>
-            <li><a href="#ids2">商城</a></li>
-            <li><a href="#ids3">购物车</a></li>
-            <li><a href="#ids4">我的</a></li>
+            <li><a href="#ids1" class="bg">画布</a></li>
+            <li><a href="#ids2">绘制线条</a></li>
+            <li><a href="#ids3">画圆</a></li>
+            <li><a href="#ids4">插入文字</a></li>
         </ul>
     </header>
     <div class="conter">
         <section id="ids1">
-            <h1>欢迎来到首页</h1>
-            <div>番外篇可铺付扩翁付铺无可付铺扩翁破付付付付付付付付付付付付付付付付付付付付付付付无错所所所所所所所撒所大大所多</div>
+            <div>
+                <pre>
+                canvas（画布）主要是位图　　svg（矢量图）
+
+                canvas标签，必须要写的3个属性 id　　width　　height　　
+
+                　　为什么不在style中设置width和height呢？
+
+                　　　　因为这设置width和height话会有位移差；
+
+                　　　　位移差：在画布里面的元素有偏差；
+
+                　　js中每次使用canvas，都要设置一个绘图环境，然后会得到一个对象，然后对其进行操作；
+
+                　　var c=document.getElementById("") canvas标签的id值；
+
+                　　var d=c.getContext("2d")　　设置绘图属性；
+
+                　　然后得到d这个对象，就可以对其进行操作元素里面的属性和方法；
+                　　方法和属性(带()的是方法，不带的是属性)：
+
+                　　　　fillRect()：绘制一个填充方块，默认颜色是黑色； 参数：x,y,w,h (坐标和宽高)
+
+                　　　　fillStyle：填充颜色 属性值：想要的颜色；
+
+                　　　　strokeRect()：绘制边框的方框； （如果绘制边框的话，会有2px的偏差，所以设置坐标的话需要在原有的基础上加上0.5），参数同fillRect()
+
+                　　　　lineWidth：边框粗细；
+
+                　　　　strokeStyle：线条颜色；
+
+                　　　　lineJoin：边框圆角 属性值：round 圆，　　
+
+                　　　　lineCap：线条圆角；
+
+                　　
+            </pre>
+            </div>
         </section>
         <section id="ids2">
-            <h1>欢迎来到商场</h1>
-            <div>番外篇可铺付扩翁付铺无可付铺扩翁破付付付付付付付付付付付付付付付付付付付付付付付无错所所所所所所所撒所大大所多</div>
+            <div>
+                <pre>
+                        　绘制线条
+
+                        　　　　moveTo()：绘制线段的起点　　参数 x,y 　坐标位置；
+        
+                        　　　　lineTo()：绘制线段的领点　　参数 x,y　　坐标位置 ； （最后一个lineTo就代表终点）
+        
+                        　　　　线条只能有一个moveTo()，但却可以有很多lineTo()
+        
+                        　　　　stroke()　　绘制线段；
+        
+                        　　　　beginPath　　开始路径 必须要写对应的关闭路径　　
+        
+                        　　　　closePath　　关闭路径
+        
+                        　　　　两者同时出现，将绘制路径闭合，起始点和结尾点，首尾相连；
+        
+                        　　　　rect()　　绘制方块，及不带填充色和线框；
+        
+                        　　　　fill()　　填充颜色；
+        
+                        　　　　clearRect(x,y,width,height)　　清除矩形区域
+        
+                        　　　　save()　　restore()　　这两个方法成对出现，中间的属性样式，之影响内部，不影响外部；          
+                </pre>
+            </div>
         </section>
         <section id="ids3">
-            <h1>欢迎来到购物车</h1>
-            <div>番外篇可铺付扩翁付铺无可付铺扩翁破付付付付付付付付付付付付付付付付付付付付付付付无错所所所所所所所撒所大大所多</div>
+            <div>
+                <pre>
+                        画圆：
+
+                        　　　　arc()：参数（x,y,半径，开始弧度，结束弧度，时针方向）；
+            
+                        　　　　x,y坐标　　半径，圆的大小， 开始弧度，一般都是0，结束弧度，一般都是 (0-360)*Math.PI/180，　　时针方向，true 逆时针，false 顺时针　　
+            
+                        　 translate()　平移，画布大小位置不变，起始坐标变了 参数 x,y
+            
+                        　　旋转：rotate()　　同translate原理；
+            
+                        　　需注意一点，需要先通过 translate() 确定起始坐标点，在来操作rotate会比较好
+            
+                        　　缩放：scale(0.5，0.5)　　画布缩放，就是将画布向后移动，跟人的视距就远了，近大远小；
+            
+                        　　画布中插入图片；drawImage()
+            
+                        　　　　var img=new Image()　　
+            
+                        　　　　img.src="图片路径"　　
+            
+                        　　　　img.onload=function(){
+            
+                        　　　　　　d.drawImage(img,x,y,w,h)　　　　d就是画布对象，img图片对象，坐标宽高，drawImage()在画布中插入图片
+            
+                        　　　　}　　　　
+            
+                </pre>
+            </div>
         </section>
         <section id="ids4">
-            <h1>欢迎来到我的</h1>
-            <div>番外篇可铺付扩翁付铺无可付铺扩翁破付付付付付付付付付付付付付付付付付付付付付付付无错所所所所所所所撒所大大所多</div>
+            <div>
+                <pre>
+                    插入文字：
+
+                        　　　　strokeText()　　插入的文字带边框　　参数: "输入的内容" , x , y　　(坐标)
+            
+                        　　　　fillText()　　　　不带边框　　　　参数同strokeText()
+            
+                        　　　　textAlign：相对字体的起始点，水平居中
+            
+                        　　　　textBaseline：移到字体的起始点，垂直居中
+            
+                        　　　　font：字体大小和字形
+                </pre>
+            </div>
         </section>
     </div>
     <script>
